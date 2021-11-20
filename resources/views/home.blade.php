@@ -14,6 +14,11 @@
                         </div>
                     @endif
 
+                    @foreach(\App\Models\User::all() as $user)
+                        <a href="{{route('impersonate', $user->id)}}">{{$user->name}}</a><br>
+                    @endforeach
+                    <a href="{{route('impersonate.leave')}}">END</a><br>
+
                     {{ __('You are logged in!') }}
                 </div>
             </div>

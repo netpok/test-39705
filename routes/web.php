@@ -26,3 +26,4 @@ Route::get('/i/{name}', function ($name){
     Auth::user()->impersonate(User::whereName($name)->firstOrFail());
     return redirect('/home');
 });
+Route::impersonate();
